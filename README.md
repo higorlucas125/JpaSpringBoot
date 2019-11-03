@@ -13,7 +13,7 @@ mvn clean insatall or mvn clean install -nsu
 ## Usage
 
 ```
-In creation todo
+In creation
 ```
 
 ## Project Standard
