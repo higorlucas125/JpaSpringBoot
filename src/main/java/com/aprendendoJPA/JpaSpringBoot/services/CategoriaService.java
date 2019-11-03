@@ -1,4 +1,4 @@
-package com.aprendendoJPA.JpaSpringBoot.service;
+package com.aprendendoJPA.JpaSpringBoot.services;
 
 import org.springframework.stereotype.Service;
 

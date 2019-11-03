@@ -1,4 +1,4 @@
-package com.aprendendoJPA.JpaSpringBoot.repository;
+package com.aprendendoJPA.JpaSpringBoot.repositories;
 
 import com.aprendendoJPA.JpaSpringBoot.domain.Categoria;
 import org.springframework.data.jpa.repository.JpaRepository;
