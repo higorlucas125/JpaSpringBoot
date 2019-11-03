@@ -19,7 +19,7 @@ In creation
 ## Project Standard
 
 The Standards being used in these projects are using ***Design Patterns***
-*[mvc](https://www.tutorialspoint.com/design_pattern/mvc_pattern.htm) is a site that features some of the mvc ***Model View Controller***
+* [mvc](https://www.tutorialspoint.com/design_pattern/mvc_pattern.htm) is a site that features some of the mvc ***Model View Controller***
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
