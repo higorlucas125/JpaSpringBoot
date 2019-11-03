@@ -22,4 +22,9 @@ public class CategoriaController {
         return ResponseEntity.ok().body(obj);
     }
 
+    //TODO remove depois de testar
+    public void testandoMaster( StringBuilder stringBuilder){
+        System.out.println( stringBuilder);
+    }
+
 }
