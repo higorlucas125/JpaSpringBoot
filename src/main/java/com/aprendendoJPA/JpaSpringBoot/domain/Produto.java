@@ -1,6 +1,8 @@
 package com.aprendendoJPA.JpaSpringBoot.domain;
 
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -19,6 +21,9 @@ public class Produto implements Serializable {
     private String nome;
     private Double preco;
 
+    // É para recursividade infinita, como um produto tem n categorias e categorias tem n produtos o JSON fica doido,
+    // com isso precisa utilizar o JsonBackReference e o JsonManagedReference.
+    @JsonBackReference
     @ManyToMany
     @JoinTable(
             name = "PRODUTO_CATEGORIA",

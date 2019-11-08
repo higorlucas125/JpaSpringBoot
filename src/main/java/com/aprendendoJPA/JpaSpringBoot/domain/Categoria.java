@@ -1,6 +1,8 @@
 package com.aprendendoJPA.JpaSpringBoot.domain;
 
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -23,6 +25,7 @@ public class Categoria implements Serializable {
 
     private String nome;
 
+    @JsonManagedReference
     @ManyToMany(mappedBy = "categoriaList")
     private List<Produto> produtos = new ArrayList<>();
 
