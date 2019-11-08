@@ -2,10 +2,15 @@ package com.aprendendoJPA.JpaSpringBoot;
 
 import com.aprendendoJPA.JpaSpringBoot.domain.Categoria;
 import com.aprendendoJPA.JpaSpringBoot.domain.Cidade;
+import com.aprendendoJPA.JpaSpringBoot.domain.Cliente;
+import com.aprendendoJPA.JpaSpringBoot.domain.Endereco;
 import com.aprendendoJPA.JpaSpringBoot.domain.Estado;
 import com.aprendendoJPA.JpaSpringBoot.domain.Produto;
+import com.aprendendoJPA.JpaSpringBoot.domain.enums.TipoCliente;
 import com.aprendendoJPA.JpaSpringBoot.repositories.CategoriaRepository;
 import com.aprendendoJPA.JpaSpringBoot.repositories.CidadeRepository;
+import com.aprendendoJPA.JpaSpringBoot.repositories.ClienteRepository;
+import com.aprendendoJPA.JpaSpringBoot.repositories.EnderecoRepository;
 import com.aprendendoJPA.JpaSpringBoot.repositories.EstadoRepository;
 import com.aprendendoJPA.JpaSpringBoot.repositories.ProdutoRepository;
 import org.apache.log4j.Logger;
@@ -32,6 +37,12 @@ public class JpaSpringBootApplication implements CommandLineRunner {
 
 	@Autowired
 	private EstadoRepository estadoRepository;
+
+	@Autowired
+	private ClienteRepository clienteRepository;
+
+	@Autowired
+	private EnderecoRepository enderecoRepository;
 
 	public static void main(String[] args) {
 
@@ -94,5 +105,20 @@ public class JpaSpringBootApplication implements CommandLineRunner {
 
 		cidadeRepository.saveAll(Arrays.asList(uberaba,uberlandia,saoPaulo,florianopolis));
 		logger.info("Salvou cidades e estados");
+
+
+		// CRIANDO O CLIENTE E O ENDEREÇO
+
+		Cliente cliente1 = new Cliente("Maria Silva", "maria@gmail.com", "36378912377", TipoCliente.PESSOAFISICA);
+		Cliente cliente2 = new Cliente("Mariane Lívia Tatiane Caldeira", "marianeliviatatianecaldeira_@edu.uniso.br", "52206155303", TipoCliente.PESSOAFISICA);
+
+		Endereco e = new Endereco("Rua Flores", "300", "Apto 303", "Jardim", "38220834", cliente1, uberlandia);
+		Endereco e2 = new Endereco("Avenida Matos", "105", "Sala 800", "Centro", "38777012", cliente2, saoPaulo);
+
+		cliente1.getEnderecos().addAll(Collections.singletonList(e));
+		cliente2.getEnderecos().addAll(Collections.singletonList(e2));
+
+		clienteRepository.saveAll(Arrays.asList(cliente1,cliente2));
+		enderecoRepository.saveAll(Arrays.asList(e,e2));
 	}
 }

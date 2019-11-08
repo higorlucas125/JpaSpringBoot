@@ -1,9 +1,9 @@
 package com.aprendendoJPA.JpaSpringBoot.repositories;
 
-import com.aprendendoJPA.JpaSpringBoot.domain.Cidade;
+import com.aprendendoJPA.JpaSpringBoot.domain.Cliente;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface CidadeRepository extends JpaRepository<Cidade,Integer> {
+public interface ClienteRepository extends JpaRepository<Cliente,Integer> {
 }
