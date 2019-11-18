@@ -120,5 +120,6 @@ public class JpaSpringBootApplication implements CommandLineRunner {
 
 		clienteRepository.saveAll(Arrays.asList(cliente1,cliente2));
 		enderecoRepository.saveAll(Arrays.asList(e,e2));
+		logger.info("Terminou de criar tudo");
 	}
 }

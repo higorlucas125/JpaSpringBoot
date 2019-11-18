@@ -1,6 +1,7 @@
 package com.aprendendoJPA.JpaSpringBoot.domain;
 
 import com.aprendendoJPA.JpaSpringBoot.domain.enums.TipoCliente;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import javax.persistence.CollectionTable;
 import javax.persistence.ElementCollection;
@@ -28,6 +29,7 @@ public class Cliente implements Serializable {
     private String cpfOuCnpj;
     private Integer tipo;
 
+    @JsonManagedReference
     @OneToMany(mappedBy = "cliente")
     private List<Endereco> enderecos = new ArrayList<>();
 

@@ -1,5 +1,6 @@
 package exception;
 
+import org.apache.log4j.Logger;
 import org.hibernate.ObjectNotFoundException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
